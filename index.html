@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Delivery</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="script.js" defer></script>
+</head>
+
+<body class="background-image">
+    <!-- Botões fixos com links para redes sociais -->
+    <div class="fixed-buttons">
+        <button type="button" class="btn btn-img" onclick="window.open('https://www.facebook.com/profile.php?id=61553682487326', '_blank')">
+            <img src="https://i.imgur.com/eciK6eU.png" alt="Facebook" width="30" height="30">
+        </button>
+        <button type="button" class="btn btn-img" onclick="window.open('https://wa.me/5519981987162', '_blank')">
+            <img src="https://i.imgur.com/mV2UGjK.png" alt="WhatsApp" width="30" height="30">
+        </button>
+        <button type="button" class="btn btn-img" onclick="window.open('https://www.instagram.com/kr9oficial/', '_blank')">
+            <img src="https://i.imgur.com/OWdUupI.png" alt="Instagram" width="30" height="30">
+        </button>
+    </div>
+
+    <!-- Cabeçalho com navegação -->
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo right">
+                <img src="logo.png" alt="Logo" style="height: 50px; width: auto;">
+            </a>
+            <ul id="nav-mobile" class="left hide-on-med-and-down"></ul>
+        </div>
+    </nav>
+
+    <!-- Carrossel de Imagens -->
+    <div class="carousel">
+        <div><img src="esfiha1.jpg" alt="Primeiro"></div>
+        <div><img src="pizzadoce.jpg" alt="Carrossel 1"></div>
+        <div><img src="pizzasfundo.jpg" alt="Pizzas Fundo"></div>
+        <div><img src="esfiha2.jpg" alt="Fundo"></div>
+        <div><img src="pizzas.jpg" alt="Pizzas"></div>
+    </div>
+
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+    <!-- Botões para categorias de produtos -->
+    <div class="button-container">
+        <button class="custom-btn btn-1" type="button" id="pizzasButton" data-bs-toggle="collapse" data-bs-target="#collapseWhoWeAre" aria-expanded="false" aria-controls="collapseWhoWeAre">
+            Pizzas
+        </button>
+        
+        <button class="custom-btn btn-2" type="button" id="esfihasButton" data-bs-toggle="collapse" data-bs-target="#collapseOurServices" aria-expanded="false" aria-controls="collapseOurServices">
+            Esfihas
+        </button>
+        
+        <button class="custom-btn btn-1" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOurServices2" aria-expanded="false" aria-controls="collapseOurServices2">
+            Bebidas
+        </button>
+    </div>
+
+    <!-- Conteúdo expandido -->
+    <div class="collapse expanded-content custom-collapse" id="collapseWhoWeAre">
+        <div class="card card-body">
+            <div id="pizzas-list">
+                <!-- A lista de pizzas será carregada aqui pelo JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <div class="collapse expanded-content custom-collapse" id="collapseOurServices">
+        <div class="card card-body">
+            <div id="esfihas-list">
+                <<!-- A lista de esfihas será carregada aqui pelo JavaScript -->>
+            </div>
+        </div>
+    </div>
+
+    <div class="collapse expanded-content custom-collapse" id="collapseOurServices2">
+        <div class="card card-body">
+            <!-- Conteúdo para bebidas -->
+        </div>
+    </div>
+
+    <!-- Carrinho de Compras -->
+    <div class="cart-container">
+        <h2>Seu Pedido</h2>
+        <div id="cart-items">
+            <!-- Lista de itens do carrinho será carregada aqui -->
+        </div>
+        <div class="cart-total">
+            Total: R$ <span id="cart-total">0.00</span>
+        </div>
+        <button class="btn btn-danger" id="clear-cart-btn">Remover Todos</button>
+        <button class="btn btn-primary" id="checkout-btn" data-bs-toggle="modal" data-bs-target="#checkoutModal">Finalizar Compras</button>
+    </div>
+
+    <!-- Modal de Checkout -->
+    <div class="modal fade" id="checkoutModal" tabindex="-1" aria-labelledby="checkoutModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="checkoutModalLabel">Finalizar Pedido</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="checkout-form">
+                        <!-- Campos de informações do cliente -->
+                        <div class="mb-3">
+                            <label for="clientName" class="form-label">Nome</label>
+                            <input type="text" class="form-control" id="clientName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="clientPhone" class="form-label">Telefone</label>
+                            <input type="text" class="form-control" id="clientPhone" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="clientEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="clientEmail" required>
+                        </div>
+                        <!-- Endereço -->
+                        <div class="mb-3">
+                            <label for="clientAddress" class="form-label">Endereço</label>
+                            <input type="text" class="form-control" id="clientAddress" required placeholder="Ex: Rua das Flores, Bairro Centro">
+                        </div>
+                        <div class="mb-3">
+                            <label for="houseNumber" class="form-label">Número da Casa</label>
+                            <input type="text" class="form-control" id="houseNumber" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="complement" class="form-label">Complemento</label>
+                            <input type="text" class="form-control" id="complement">
+                        </div>
+                        <div class="mb-3">
+                            <label for="reference" class="form-label">Referência</label>
+                            <input type="text" class="form-control" id="reference">
+                        </div>
+                        <div class="mb-3">
+                            <label for="deliveryOption" class="form-label">Opção de Entrega</label>
+                            <select class="form-select" id="deliveryOption" required>
+                                <option value="delivery">Entrega</option>
+                                <option value="pickup">Retirada</option>
+                            </select>
+                        </div>
+                        <div class="mb-3" id="change-container" style="display: none;">
+                            <label for="change" class="form-label">Troco para</label>
+                            <input type="text" class="form-control" id="change">
+                        </div>
+                        <div class="mb-3">
+                            <label for="paymentMethod" class="form-label">Método de Pagamento</label>
+                            <select class="form-select" id="paymentMethod" required>
+                                <option value="cash">Dinheiro</option>
+                                <option value="pix">PIX</option>
+                                <option value="card">Cartão</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <h5>Total: R$ <span id="checkout-total">0.00</span></h5>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Confirmar Pedido</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

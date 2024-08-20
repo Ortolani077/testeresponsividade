@@ -1,0 +1,116 @@
+body {
+    font-family: 'Lato', sans-serif;
+    background-image: url('backchat.webp');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.nav-wrapper {
+    background-color: #c62828;
+}
+
+.carousel img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.fixed-buttons {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.fixed-buttons .btn {
+    margin-bottom: 10px;
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.fixed-buttons .btn img {
+    transition: transform 0.3s;
+}
+
+.fixed-buttons .btn:hover img {
+    transform: scale(1.1);
+}
+
+.button-container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.custom-btn {
+    background-color: #c62828;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.custom-btn:hover {
+    background-color: #b71c1c;
+}
+
+.card-body img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.cart-container {
+    position: fixed;
+    right: 0;
+    top: 10%;
+    width: 300px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cart-container h2 {
+    text-align: center;
+}
+
+#cart-items {
+    margin-bottom: 15px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.cart-total {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.cart-total span {
+    font-size: 18px;
+}
+
+#clear-cart-btn, #checkout-btn {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.modal-content {
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.modal-header {
+    background-color: #c62828;
+    color: white;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
